@@ -39,8 +39,15 @@ function addReview(
   comment: string
 ): ReviewedBook {
   // write your code here...
-
+  const newReview: Review = { reviewer, comment };
+  if (!book.reviews) {
+    book.reviews = [newReview];
+  } else {
+    book.reviews.push(newReview);
+  }
+  
   return book;
 }
+
 
 export { addReview, Review, ReviewedBook };
